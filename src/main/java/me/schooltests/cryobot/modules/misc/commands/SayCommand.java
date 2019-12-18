@@ -11,6 +11,11 @@ import java.util.List;
 
 public class SayCommand extends BaseCommand {
     private MiscModule module;
+    private final String identifier = "say";
+    private final String description = "Make the bot send a message";
+    private final List<Permission> permissions = Arrays.asList(Permission.MANAGE_CHANNEL, Permission.MANAGE_SERVER);
+    private final List<CommandArgument> arguments = Arrays.asList(new CommandArgument("Message", "The message the bot should send", 1, 1500));
+    private final List<String> aliases = Arrays.asList("speak");
     public SayCommand(MiscModule module) {
         super(module);
         this.module = module;
@@ -32,28 +37,22 @@ public class SayCommand extends BaseCommand {
 
     @Override
     public String getIdentifier() {
-        return "say";
+        return identifier;
     }
 
     @Override
     public String getDescription() {
-        return "Make the bot send a message";
+        return description;
     }
 
     @Override
-    public List<Permission> getPermissions() {
-        return Arrays.asList(Permission.MANAGE_CHANNEL, Permission.MANAGE_SERVER);
-    }
+    public List<Permission> getPermissions() { return permissions; }
 
     @Override
-    public List<CommandArgument> getArguments() {
-        return Arrays.asList(new CommandArgument("Message", "The message the bot should send", 1, 1500));
-    }
+    public List<CommandArgument> getArguments() { return arguments; }
 
     @Override
-    public List<String> getAliases() {
-        return Arrays.asList("speak");
-    }
+    public List<String> getAliases() { return aliases; }
 
     // say <message>
     @Override

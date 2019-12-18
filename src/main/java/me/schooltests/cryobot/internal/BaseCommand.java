@@ -3,10 +3,9 @@ package me.schooltests.cryobot.internal;
 import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class BaseCommand {
+public abstract class BaseCommand {
     private BaseModule module;
 
     /*
@@ -25,15 +24,15 @@ public class BaseCommand {
     }
 
 
-    public String getIdentifier() { return ""; }
+    public abstract String getIdentifier();
 
-    public List<CommandArgument> getArguments() { return new ArrayList<>(); }
+    public abstract List<CommandArgument> getArguments();
 
-    public List<Permission> getPermissions() { return new ArrayList<>(); }
+    public abstract List<Permission> getPermissions();
 
-    public String getDescription() { return ""; }
+    public abstract String getDescription();
 
-    public List<String> getAliases() { return new ArrayList<>(); }
+    public abstract List<String> getAliases();
 
-    public void execute(GuildMessageReceivedEvent event, String[] args) { }
+    public abstract void execute(GuildMessageReceivedEvent event, String[] args);
 }

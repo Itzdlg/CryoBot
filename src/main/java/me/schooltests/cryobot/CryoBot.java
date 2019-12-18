@@ -8,11 +8,12 @@ import net.dv8tion.jda.api.JDABuilder;
 
 import javax.security.auth.login.LoginException;
 
-public class CryoBot {
-    private static RegistryService registryService;
-    private static JDA jda;
 
-    public static void main(String[] args) throws LoginException, InterruptedException {
+public class CryoBot {
+    private RegistryService registryService;
+    private JDA jda;
+
+    public CryoBot() throws LoginException, InterruptedException {
         jda = new JDABuilder(AccountType.BOT).setToken(DataService.token).build().awaitReady();
         registryService = new RegistryService(jda);
     }
