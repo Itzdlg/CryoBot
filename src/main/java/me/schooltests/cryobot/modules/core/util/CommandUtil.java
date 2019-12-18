@@ -1,6 +1,6 @@
 package me.schooltests.cryobot.modules.core.util;
 
-import me.schooltests.cryobot.internal.BaseCommand;
+import me.schooltests.cryobot.internal.ICommand;
 import me.schooltests.cryobot.internal.CommandArgument;
 import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
@@ -34,7 +34,7 @@ public class CommandUtil {
         return anotherArray;
     }
 
-    public boolean validArgs(BaseCommand command, String[] args) {
+    public boolean validArgs(ICommand command, String[] args) {
         if(command.getArguments() == null || command.getArguments().isEmpty()) return true;
 
         List<CommandArgument> requiredArgs = command.getArguments().stream().filter(arg -> !arg.isOptional()).collect(Collectors.toList());
@@ -48,7 +48,7 @@ public class CommandUtil {
         return true;
     }
 
-    public void handleCommandEvent(GuildMessageReceivedEvent event, BaseCommand command, String[] args) {
+    public void handleCommandEvent(GuildMessageReceivedEvent event, ICommand command, String[] args) {
         boolean hasPermission = false;
         for(Permission perm : command.getPermissions()) {
             if (event.getMember().hasPermission(perm)) hasPermission = true;

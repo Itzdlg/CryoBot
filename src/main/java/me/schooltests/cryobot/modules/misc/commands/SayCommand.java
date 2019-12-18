@@ -1,6 +1,6 @@
 package me.schooltests.cryobot.modules.misc.commands;
 
-import me.schooltests.cryobot.internal.BaseCommand;
+import me.schooltests.cryobot.internal.ICommand;
 import me.schooltests.cryobot.internal.CommandArgument;
 import me.schooltests.cryobot.modules.misc.MiscModule;
 import net.dv8tion.jda.api.Permission;
@@ -9,7 +9,7 @@ import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import java.util.Arrays;
 import java.util.List;
 
-public class SayCommand extends BaseCommand {
+public class SayCommand implements ICommand {
 
     private MiscModule module;
     private final String identifier = "say";
@@ -19,11 +19,9 @@ public class SayCommand extends BaseCommand {
     private final List<String> aliases = Arrays.asList("speak");
 
     public SayCommand(MiscModule module) {
-        super(module);
         this.module = module;
     }
 
-    @Override
     public MiscModule getModule() {
         return module;
     }
