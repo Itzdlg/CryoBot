@@ -28,8 +28,6 @@ public class RegistryService extends ListenerAdapter {
         return JDA;
     }
 
-    public String getCommandPrefix() { return ":"; }
-
     public void registerModule(BaseModule module) {
         modules.add(module);
         module.onInit();

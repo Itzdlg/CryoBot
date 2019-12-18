@@ -9,6 +9,10 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class CommandUtil {
+    public String getCommandPrefix() {
+        return "-";
+    }
+
     public String[] removeElementFromArray(String[] arr, int index) {
         if (arr == null || index < 0 || index >= arr.length) {
             return arr;

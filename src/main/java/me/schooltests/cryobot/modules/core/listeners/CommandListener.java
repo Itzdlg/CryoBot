@@ -19,9 +19,9 @@ public class CommandListener extends ListenerAdapter {
     @Override
     public void onGuildMessageReceived(GuildMessageReceivedEvent event) {
         if(!event.getAuthor().isBot()) {
-            if (event.getMessage().getContentRaw().startsWith(getModule().getRegistryService().getCommandPrefix())) {
+            if (event.getMessage().getContentRaw().startsWith(getModule().getCommandUtil().getCommandPrefix())) {
                 String[] args = event.getMessage().getContentRaw().split(" ");
-                String commandPart = args[0].replaceFirst(getModule().getRegistryService().getCommandPrefix(), "");
+                String commandPart = args[0].replaceFirst(getModule().getCommandUtil().getCommandPrefix(), "");
                 for (BaseCommand command : getModule().getRegistryService().getCommands()) {
                     if (command.getIdentifier().equalsIgnoreCase(commandPart) || command.getAliases().contains(commandPart.toLowerCase())) {
                         getModule().getCommandUtil().handleCommandEvent(event, command, getModule().getCommandUtil().removeElementFromArray(args, 0));
