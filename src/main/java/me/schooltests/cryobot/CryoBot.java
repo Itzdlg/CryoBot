@@ -10,6 +10,7 @@ import javax.security.auth.login.LoginException;
 
 
 public class CryoBot {
+
     private RegistryService registryService;
     private JDA jda;
 
@@ -17,4 +18,5 @@ public class CryoBot {
         jda = new JDABuilder(AccountType.BOT).setToken(DataService.token).build().awaitReady();
         registryService = new RegistryService(jda);
     }
+
 }

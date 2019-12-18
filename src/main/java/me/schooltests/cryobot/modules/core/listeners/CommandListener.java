@@ -8,8 +8,10 @@ import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
 
 public class CommandListener extends ListenerAdapter {
+
     private CoreModule module;
     private final CommandUtil commandUtil = getModule().getCommandUtil();
+
     public CommandListener(CoreModule module) {
         this.module = module;
     }
@@ -32,4 +34,5 @@ public class CommandListener extends ListenerAdapter {
             }
         }
     }
+
 }

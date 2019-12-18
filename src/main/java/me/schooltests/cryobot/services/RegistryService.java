@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RegistryService extends ListenerAdapter {
+
     private JDA JDA;
     private List<BaseModule> modules = new ArrayList<>();
     private List<BaseCommand> commands = new ArrayList<>();
@@ -44,4 +45,5 @@ public class RegistryService extends ListenerAdapter {
     public List<BaseCommand> getCommands() {
         return commands;
     }
+
 }

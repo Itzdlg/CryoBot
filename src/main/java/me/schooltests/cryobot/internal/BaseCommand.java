@@ -6,6 +6,7 @@ import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import java.util.List;
 
 public abstract class BaseCommand {
+
     private BaseModule module;
 
     /*
@@ -35,4 +36,5 @@ public abstract class BaseCommand {
     public abstract List<String> getAliases();
 
     public abstract void execute(GuildMessageReceivedEvent event, String[] args);
+
 }

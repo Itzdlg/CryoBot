@@ -4,6 +4,7 @@ import me.schooltests.cryobot.services.RegistryService;
 import net.dv8tion.jda.api.JDA;
 
 public class BaseModule {
+
     private RegistryService registryService;
     public BaseModule(RegistryService registryService) {
         this.registryService = registryService;
@@ -16,4 +17,5 @@ public class BaseModule {
     public RegistryService getRegistryService() { return registryService; }
 
     public void onInit() { }
+
 }

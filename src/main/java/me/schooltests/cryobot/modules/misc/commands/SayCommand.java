@@ -10,12 +10,14 @@ import java.util.Arrays;
 import java.util.List;
 
 public class SayCommand extends BaseCommand {
+
     private MiscModule module;
     private final String identifier = "say";
     private final String description = "Make the bot send a message";
     private final List<Permission> permissions = Arrays.asList(Permission.MANAGE_CHANNEL, Permission.MANAGE_SERVER);
     private final List<CommandArgument> arguments = Arrays.asList(new CommandArgument("Message", "The message the bot should send", 1, 1500));
     private final List<String> aliases = Arrays.asList("speak");
+
     public SayCommand(MiscModule module) {
         super(module);
         this.module = module;

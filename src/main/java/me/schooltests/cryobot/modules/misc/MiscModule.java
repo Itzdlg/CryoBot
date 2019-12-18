@@ -5,6 +5,7 @@ import me.schooltests.cryobot.internal.BaseModule;
 import me.schooltests.cryobot.services.RegistryService;
 
 public class MiscModule extends BaseModule {
+
     public MiscModule(RegistryService registryService) {
         super(registryService);
     }
@@ -13,4 +14,5 @@ public class MiscModule extends BaseModule {
     public void onInit() {
         getRegistryService().registerCommand(new SayCommand(this));
     }
+
 }
