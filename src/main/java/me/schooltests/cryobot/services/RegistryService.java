@@ -5,12 +5,11 @@ import me.schooltests.cryobot.internal.BaseModule;
 import me.schooltests.cryobot.internal.ReflectionRegistry;
 import me.schooltests.cryobot.modules.core.CoreModule;
 import net.dv8tion.jda.api.JDA;
-import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class RegistryService extends ListenerAdapter {
+public class RegistryService {
 
     private JDA JDA;
     private List<BaseModule> modules = new ArrayList<>();
@@ -46,7 +45,7 @@ public class RegistryService extends ListenerAdapter {
         return null;
     }
 
-    public <T extends ICommand> void registerCommand(T command) {
+    public void registerCommand(ICommand command) {
         commands.add(command);
     }
 
